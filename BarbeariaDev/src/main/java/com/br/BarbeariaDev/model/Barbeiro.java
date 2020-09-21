@@ -24,7 +24,8 @@ public class Barbeiro {
 	@Column(name = "email")
 	private String email;
 	//@Size(min=11, max=11, message = "{phone.not.valid}")
-	@Column(name = "telefone")
-	private String telefone;	
-
+	@Column(name = "cpf")
+	private String cpf;	
+	@Column(name = "senha")
+	private String senha;	
 }
