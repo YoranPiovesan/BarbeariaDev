@@ -45,8 +45,6 @@ public class MultiHttpSecurityConfig {
     			.password("password")
     			.roles("ADMIN");
     	}
-    	
-    	
     @Override
     	protected void configure(HttpSecurity httpSecurity) throws Exception {
 
@@ -64,11 +62,6 @@ public class MultiHttpSecurityConfig {
     		.antMatchers(staticResources).permitAll()
 			.antMatchers(HttpMethod.POST, "/rest/autenticar").permitAll().anyRequest().authenticated()
 			.and().cors().and()
-			////.formLogin().permitAll().and()
-			//.and().formLogin().loginPage("/login").permitAll().and()
-			////.logout().permitAll()			
-			////.and()
-			//.antMatcher("/rest/**")
 			// filtra requisições de login
 			.addFilterBefore(new JWTLoginFilter("/rest/autenticar", authenticationManager()), UsernamePasswordAuthenticationFilter.class)
 			// filtra outras requisições para verificar a presença do JWT no header
