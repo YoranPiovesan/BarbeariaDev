@@ -1,5 +1,7 @@
 package com.br.BarbeariaDev.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
+
 @Data
 @Entity(name = "horario")
 public class Horario {
@@ -18,9 +21,9 @@ public class Horario {
 	@Column(name = "email")
 	private String email;
 	@Column(name = "telefone")
-	private String telefone;	
-	@Column(name = "barbeiro")
-	private String barbeiro;
-	@Column(name = "horario")
-	private String horario;
+	private String telefone;
+	@Column(name = "barbeiroCodigo")
+	private Long barbeiroId;
+	@Column(name = "data")
+	private LocalDateTime data;
 }

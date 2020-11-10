@@ -44,6 +44,15 @@ public class HorarioService {
 			return false;
 		}
 	}
+	public List<Horario> consultarPorBarbeiro(Long id) {
+		try {
+			return repository.findByBarbeiroId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public boolean editar(Long id, Horario horario) {
 		try {
 			horario.setId(id);

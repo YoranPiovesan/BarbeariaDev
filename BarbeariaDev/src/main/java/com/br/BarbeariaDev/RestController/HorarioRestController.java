@@ -35,6 +35,11 @@ public class HorarioRestController {
 	public List<Horario> consultar(){
 		return service.consultar();
 	}
+	@GetMapping("/consultar_barbeiro/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<Horario> consultarPorBarbeiro(@PathVariable("id") Long id){
+		return service.consultarPorBarbeiro(id);
+	}
 	@PostMapping("/inserir")
 	@ResponseStatus(code = HttpStatus.OK)
 	public void inserir(@RequestBody Horario horario){
@@ -65,7 +70,8 @@ public class HorarioRestController {
 		try {
 			if(service.editar(id, horario)) {
 				response.setStatus(200);
-			}else{
+			}
+			else{
 				response.setStatus(418);
 			}
 		} catch (Exception e) {

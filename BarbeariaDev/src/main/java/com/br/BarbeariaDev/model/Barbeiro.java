@@ -1,4 +1,6 @@
 package com.br.BarbeariaDev.model;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,12 +22,12 @@ public class Barbeiro {
 	
 	@Column(name = "nome")
 	private String nome;
-	//@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "Email Invalido")
 	@Column(name = "email")
 	private String email;
-	//@Size(min=11, max=11, message = "{phone.not.valid}")
 	@Column(name = "cpf")
 	private String cpf;	
 	@Column(name = "senha")
 	private String senha;	
+
+
 }
